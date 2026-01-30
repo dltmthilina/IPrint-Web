@@ -1,10 +1,10 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
-import SplashScreen from './components/SplashScreen';
-import SmoothScrollWrapper from './components/SmoothScrollWrapper';
-import Header from './components/Header';
-import NavigationArrows from './components/NavigationArrows';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import "./index.css";
+import SplashScreen from "./components/SplashScreen";
+import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
+import Header from "./components/Header";
+import NavigationArrows from "./components/NavigationArrows";
 import PageTransition from "./components/PageTransition";
 import Mug3DNavigation from "./components/Pentagon3DNavigation";
 
@@ -36,7 +36,7 @@ function App() {
     <>
       {loading && <SplashScreen onFinish={handleSplashFinish} />}
       {!loading && (
-        <Router basename="/IPrint-Web">
+        <Router>
           <Header />
           <NavigationArrows />
           <Mug3DNavigation />
