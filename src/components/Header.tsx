@@ -4,7 +4,7 @@ import logo from '../iprintlogo.jpeg';
 
 const Header = () => {
     return (
-      <div className="sticky top-0 z-50 w-full backdrop-blur-xl bg-transparent">
+      <div className="fixed top-0 z-50 w-full backdrop-blur-xl bg-transparent">
         <div className="layout-container flex justify-center w-full">
           <div className="layout-content-container flex flex-col max-w-[1280px] w-full px-4 md:px-10">
             <header className="flex items-center justify-between whitespace-nowrap py-4">
