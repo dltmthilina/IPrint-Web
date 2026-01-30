@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../iprintlogo.jpeg';
+import logo from "../assets/iprintlogo.jpeg";
 
 const Footer = () => {
     return (

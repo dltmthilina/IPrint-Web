@@ -1,14 +1,27 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from "react-router-dom";
 
 interface SmoothScrollWrapperProps {
   children: React.ReactNode;
 }
 
-const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({ children }) => {
+const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
+  children,
+}) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollPosRef = useRef(0);
   const targetPosRef = useRef(0);
   const rafIdRef = useRef<number | null>(null);
+  const location = useLocation();
+
+  // Reset scroll position when route changes
+  useEffect(() => {
+    scrollPosRef.current = 0;
+    targetPosRef.current = 0;
+    if (scrollRef.current) {
+      scrollRef.current.style.transform = "translate3d(0, 0, 0)";
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const element = scrollRef.current;
@@ -33,17 +46,20 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({ children }) =
       e.preventDefault();
       const maxScroll = element.scrollHeight - window.innerHeight;
       // Reduce scroll speed for more gentle, floating movement
-      targetPosRef.current = Math.max(0, Math.min(maxScroll, targetPosRef.current + e.deltaY * 0.5));
-      
+      targetPosRef.current = Math.max(
+        0,
+        Math.min(maxScroll, targetPosRef.current + e.deltaY * 0.5),
+      );
+
       if (!rafIdRef.current) {
         rafIdRef.current = requestAnimationFrame(smoothScroll);
       }
     };
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener("wheel", handleWheel);
       if (rafIdRef.current) {
         cancelAnimationFrame(rafIdRef.current);
       }
@@ -56,7 +72,7 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({ children }) =
         ref={scrollRef}
         className="will-change-transform"
         style={{
-          transform: 'translate3d(0, 0, 0)',
+          transform: "translate3d(0, 0, 0)",
         }}
       >
         {children}
