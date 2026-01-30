@@ -36,7 +36,7 @@ function App() {
     <>
       {loading && <SplashScreen onFinish={handleSplashFinish} />}
       {!loading && (
-        <Router>
+        <Router basename="/IPrint-Web">
           <Header />
           <NavigationArrows />
           <Mug3DNavigation />
