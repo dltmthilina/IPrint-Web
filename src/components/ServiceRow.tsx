@@ -1,6 +1,20 @@
 import React from 'react';
 
-const ServiceRow = ({
+interface ServiceRowProps {
+    icon: string;
+    title: string;
+    description: string;
+    priceLabel: string;
+    price: string;
+    imageUrl: string;
+    imageAlt: string;
+    tags?: string[];
+    reverse?: boolean;
+    iconBgColor?: string;
+    buttonHoverColor?: string;
+}
+
+const ServiceRow: React.FC<ServiceRowProps> = ({
     icon,
     title,
     description,

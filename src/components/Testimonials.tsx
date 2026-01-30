@@ -1,6 +1,14 @@
 import React from 'react';
 
-const TestimonialCard = ({ quote, name, role, imageUrl, imageAlt }) => (
+type TestimonialCardProps = {
+    quote: string;
+    name: string;
+    role: string;
+    imageUrl: string;
+    imageAlt: string;
+};
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, role, imageUrl, imageAlt }) => (
     <div className="p-8 rounded-2xl bg-background-light dark:bg-[#181116] border border-transparent dark:border-[#392833] hover:border-primary/30 transition-colors group">
         <div className="flex gap-1 mb-6 text-yellow-400">
             <span className="material-symbols-outlined fill-current text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>

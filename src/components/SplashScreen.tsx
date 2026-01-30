@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../iprintlogo.jpeg';
 
-const SplashScreen = ({ onFinish }) => {
+interface SplashScreenProps {
+    onFinish: () => void;
+}
+
+const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
     const [exit, setExit] = useState(false);
 
     useEffect(() => {

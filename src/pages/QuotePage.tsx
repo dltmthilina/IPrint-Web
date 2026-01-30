@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 const QuotePage = () => {
     const [step, setStep] = useState(1);
-    const [selectedType, setSelectedType] = useState(null);
+    const [selectedType, setSelectedType] = useState<string | null>(null);
 
     const productTypes = [
         { id: 'mugs', name: 'Custom Mugs', icon: 'coffee', price: '$12+' },

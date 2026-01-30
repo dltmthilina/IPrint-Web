@@ -1,6 +1,16 @@
 import React from 'react';
+import { HoverColor } from '../types/common';
 
-const ProductCard = ({
+
+interface ProductCardProps {
+    imageUrl: string;
+    title: string;
+    description: string;
+    hoverColor?: HoverColor;
+    hoverBgColor?: string;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
     imageUrl,
     title,
     description,
@@ -8,7 +18,7 @@ const ProductCard = ({
     hoverBgColor = 'bg-primary'
 }) => {
     // Map hover colors to Tailwind classes
-    const hoverColorClasses = {
+    const hoverColorClasses: Record<HoverColor, string> = {
         primary: 'hover:border-primary/50 hover:shadow-[0_20px_40px_-15px_rgba(238,43,173,0.3)]',
         secondary: 'hover:border-secondary/50 hover:shadow-[0_20px_40px_-15px_rgba(0,255,255,0.3)]',
         purple: 'hover:border-purple-500/50 hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)]',
@@ -19,7 +29,7 @@ const ProductCard = ({
         cyan: 'hover:border-cyan-500/50 hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]',
     };
 
-    const textHoverClasses = {
+    const textHoverClasses: Record<HoverColor, string> = {
         primary: 'group-hover:text-primary',
         secondary: 'group-hover:text-secondary',
         purple: 'group-hover:text-purple-400',
@@ -30,7 +40,7 @@ const ProductCard = ({
         cyan: 'group-hover:text-cyan-400',
     };
 
-    const buttonHoverClasses = {
+    const buttonHoverClasses: Record<HoverColor, string> = {
         primary: 'hover:bg-primary',
         secondary: 'hover:bg-secondary hover:text-black',
         purple: 'hover:bg-purple-600',

@@ -1,6 +1,13 @@
 import React from 'react';
 
-const GalleryItem = ({ imageUrl, category, title, alt }) => (
+interface GalleryItemProps {
+    imageUrl: string;
+    category: string;
+    title: string;
+    alt: string;
+}
+
+const GalleryItem: React.FC<GalleryItemProps> = ({ imageUrl, category, title, alt }) => (
     <div className="masonry-item group relative overflow-hidden rounded-xl bg-gray-900 cursor-pointer">
         <img
             src={imageUrl}
