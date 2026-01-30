@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/IPrint-Web/static/css/main.7edea68e.css",
+    "main.js": "/IPrint-Web/static/js/main.074831cc.js",
+    "static/js/855.02ab1f96.chunk.js": "/IPrint-Web/static/js/855.02ab1f96.chunk.js",
+    "static/js/426.52b0d248.chunk.js": "/IPrint-Web/static/js/426.52b0d248.chunk.js",
+    "static/js/527.647aed6e.chunk.js": "/IPrint-Web/static/js/527.647aed6e.chunk.js",
+    "static/js/301.42281b98.chunk.js": "/IPrint-Web/static/js/301.42281b98.chunk.js",
+    "static/js/122.7f490fd4.chunk.js": "/IPrint-Web/static/js/122.7f490fd4.chunk.js",
+    "static/js/442.a7cca2bf.chunk.js": "/IPrint-Web/static/js/442.a7cca2bf.chunk.js",
+    "static/js/453.2269f6c9.chunk.js": "/IPrint-Web/static/js/453.2269f6c9.chunk.js",
+    "static/media/iprintlogo.jpeg": "/IPrint-Web/static/media/iprintlogo.d3bc5aa8f09d87b01968.jpeg",
+    "index.html": "/IPrint-Web/index.html",
+    "main.7edea68e.css.map": "/IPrint-Web/static/css/main.7edea68e.css.map",
+    "main.074831cc.js.map": "/IPrint-Web/static/js/main.074831cc.js.map",
+    "855.02ab1f96.chunk.js.map": "/IPrint-Web/static/js/855.02ab1f96.chunk.js.map",
+    "426.52b0d248.chunk.js.map": "/IPrint-Web/static/js/426.52b0d248.chunk.js.map",
+    "527.647aed6e.chunk.js.map": "/IPrint-Web/static/js/527.647aed6e.chunk.js.map",
+    "301.42281b98.chunk.js.map": "/IPrint-Web/static/js/301.42281b98.chunk.js.map",
+    "122.7f490fd4.chunk.js.map": "/IPrint-Web/static/js/122.7f490fd4.chunk.js.map",
+    "442.a7cca2bf.chunk.js.map": "/IPrint-Web/static/js/442.a7cca2bf.chunk.js.map",
+    "453.2269f6c9.chunk.js.map": "/IPrint-Web/static/js/453.2269f6c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7edea68e.css",
+    "static/js/main.074831cc.js"
+  ]
+}
