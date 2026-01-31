@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ThreeDMug from './ThreeDMug';
 
 const HeroSection = () => {
     return (
@@ -36,7 +37,7 @@ const HeroSection = () => {
 
                                 {/* CTA Buttons */}
                                 <div className="flex flex-col sm:flex-row gap-5 mt-2">
-                                    <Link to="/quote" className="flex items-center justify-center rounded-full h-14 px-10 bg-white text-background-dark hover:bg-gray-100 transition-all text-lg font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105">
+                                    <Link to="/quote" className="btn-3d flex items-center justify-center rounded-full h-14 px-10 bg-white text-background-dark hover:bg-gray-100 text-lg font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95">
                                         Create Now
                                     </Link>
                                     <Link to="/services" className="flex items-center justify-center rounded-full h-14 px-10 bg-transparent border border-gray-600 hover:border-white hover:bg-white/5 transition-all text-white text-lg font-medium gap-2 backdrop-blur-sm">
@@ -81,9 +82,9 @@ const HeroSection = () => {
                             </div>
 
                             {/* Right Content - 3D Floating Images */}
-                            <div className="lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[500px] w-full perspective-[1000px]">
+                            <div className="lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[400px] md:h-[500px] w-full perspective-[1000px]">
                                 {/* Main Card */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-80 z-20 animate-float hover:z-50 transition-all duration-500">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 md:w-64 md:h-80 z-20 animate-float hover:z-50 transition-all duration-500">
                                     <div
                                         className="w-full h-full bg-cover bg-center rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,255,255,0.4)] border border-white/20 relative overflow-hidden group transform rotate-y-12 rotate-x-6 hover:rotate-0 transition-transform duration-700 ease-out"
                                         style={{
@@ -97,22 +98,16 @@ const HeroSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Custom Mugs Circle */}
-                                <div className="absolute top-20 left-0 md:left-10 w-48 h-48 z-10 animate-float-delayed">
-                                    <div
-                                        className="w-full h-full bg-cover bg-center rounded-full shadow-[0_20px_50px_-10px_rgba(238,43,173,0.5)] border-4 border-surface-dark relative transform -rotate-12 hover:rotate-0 transition-transform duration-500"
-                                        style={{
-                                            backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2x2XJGN3wwlypPzhq1fnhOiuna5NwGFpPEXqSUlPG1aEf4AYPsoyuhe97LrK4JPd8kH02toTneXMZ73Yt_-P_4fIxO9oulHqP1bMNgUCDh82u_2mA4lcfBJy3VAjIPVgWQ-BHpYhMW9PThG555oo0hoI7GYtDjhNlMHyxKSLNtaCombSML9wUbzPUG7dIBgUuVcNZ2FjEdTHVbDu1w2zqlZ8WYpDl27XaZpgCkoWOQQUc5MpxCpAXSCB3Jfb9d8aF0K-LOQpm2FWM")'
-                                        }}
-                                    >
-                                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface-dark px-4 py-1 rounded-full border border-primary/30 text-xs font-bold text-primary shadow-lg whitespace-nowrap">
-                                            Custom Mugs
-                                        </div>
+                                {/* Custom Mugs - 3D Render */}
+                                <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 z-40 transform -translate-x-4 md:translate-x-0 pointer-events-none">
+                                    <ThreeDMug />
+                                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface-dark px-4 py-1 rounded-full border border-primary/30 text-xs font-bold text-primary shadow-lg whitespace-nowrap z-50">
+                                        Custom Mugs
                                     </div>
                                 </div>
 
                                 {/* Printed Tiles */}
-                                <div className="absolute bottom-20 right-0 md:right-4 w-56 h-40 z-30 animate-float-slow">
+                                <div className="absolute bottom-10 right-0 md:bottom-20 md:right-4 w-40 h-28 md:w-56 md:h-40 z-30 animate-float-slow transform translate-x-4 md:translate-x-0">
                                     <div
                                         className="w-full h-full bg-cover bg-center rounded-lg shadow-[0_20px_50px_-10px_rgba(255,255,0,0.3)] border border-white/10 relative transform rotate-6 hover:rotate-0 transition-transform duration-500"
                                         style={{
@@ -125,7 +120,7 @@ const HeroSection = () => {
                                 </div>
 
                                 {/* Center Glow */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary rounded-full filter blur-[100px] opacity-20 z-0"></div>
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-primary rounded-full filter blur-[100px] opacity-20 z-0"></div>
                             </div>
                         </div>
                     </div>
