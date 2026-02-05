@@ -9,7 +9,7 @@ type TestimonialCardProps = {
 };
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, role, imageUrl, imageAlt }) => (
-    <div className="p-8 rounded-2xl bg-background-light dark:bg-[#181116] border border-transparent dark:border-[#392833] hover:border-primary/30 transition-colors group">
+    <div className="p-4 sm:p-8 rounded-2xl bg-background-light dark:bg-[#181116] border border-transparent dark:border-[#392833] hover:border-primary/30 transition-colors group">
         <div className="flex gap-1 mb-6 text-yellow-400">
             <span className="material-symbols-outlined fill-current text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
             <span className="material-symbols-outlined fill-current text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -17,7 +17,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, role, im
             <span className="material-symbols-outlined fill-current text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
             <span className="material-symbols-outlined fill-current text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
         </div>
-        <p className="text-lg font-medium leading-relaxed mb-8 text-slate-800 dark:text-gray-200">
+        <p className="text-base sm:text-lg font-medium leading-relaxed mb-6 sm:mb-8 text-slate-800 dark:text-gray-200">
             "{quote}"
         </p>
         <div className="flex items-center gap-4">
@@ -70,10 +70,10 @@ const Testimonials = () => {
                         <p className="text-slate-500 dark:text-slate-400 font-body">See what our partners say about the iprint quality.</p>
                     </div>
                     <div className="flex gap-2">
-                        <button className="w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-slate-900 dark:text-white">
+                        <button type="button" className="min-w-[44px] min-h-[44px] w-12 h-12 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-slate-900 dark:text-white active:scale-95">
                             <span className="material-symbols-outlined">arrow_back</span>
                         </button>
-                        <button className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">
+                        <button type="button" className="min-w-[44px] min-h-[44px] w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25 active:scale-95">
                             <span className="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>

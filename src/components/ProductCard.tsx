@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { HoverColor } from '../types/common';
-
 
 interface ProductCardProps {
     imageUrl: string;
@@ -10,7 +9,7 @@ interface ProductCardProps {
     hoverBgColor?: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCard: React.FC<ProductCardProps> = memo(({
     imageUrl,
     title,
     description,
@@ -56,6 +55,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div
                 className="aspect-[4/5] w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                 style={{ backgroundImage: `url("${imageUrl}")` }}
+                role="img"
+                aria-hidden="true"
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
             <div className="absolute bottom-0 left-0 p-6 w-full">
@@ -63,12 +64,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     {title}
                 </h3>
                 <p className="text-gray-400 text-xs mb-4 line-clamp-2">{description}</p>
-                <button className={`w-full py-2 rounded-lg bg-white/10 text-white text-sm font-bold transition-colors backdrop-blur-sm ${buttonHoverClasses[hoverColor]}`}>
+                <button type="button" className={`w-full min-h-[44px] py-3 sm:py-2 rounded-lg bg-white/10 text-white text-sm font-bold transition-colors backdrop-blur-sm active:scale-[0.98] ${buttonHoverClasses[hoverColor]}`}>
                     Customize
                 </button>
             </div>
         </div>
     );
-};
+});
+
+ProductCard.displayName = 'ProductCard';
 
 export default ProductCard;

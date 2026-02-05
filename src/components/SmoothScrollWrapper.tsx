@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from "react-router-dom";
+import { useScrollReveal } from "../contexts/ScrollRevealContext";
 
 interface SmoothScrollWrapperProps {
   children: React.ReactNode;
@@ -12,6 +13,8 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
   const scrollPosRef = useRef(0);
   const targetPosRef = useRef(0);
   const rafIdRef = useRef<number | null>(null);
+  const hasNotifiedRef = useRef(false);
+  const { setHasScrolled } = useScrollReveal();
   const location = useLocation();
 
   // Reset scroll position when route changes
@@ -44,8 +47,11 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
+      if (!hasNotifiedRef.current) {
+        hasNotifiedRef.current = true;
+        setHasScrolled();
+      }
       const maxScroll = element.scrollHeight - window.innerHeight;
-      // Reduce scroll speed for more gentle, floating movement
       targetPosRef.current = Math.max(
         0,
         Math.min(maxScroll, targetPosRef.current + e.deltaY * 0.5),
@@ -64,7 +70,7 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
         cancelAnimationFrame(rafIdRef.current);
       }
     };
-  }, []);
+  }, [setHasScrolled]);
 
   return (
     <div className="fixed inset-0 overflow-hidden">

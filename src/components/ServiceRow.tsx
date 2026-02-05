@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 interface ServiceRowProps {
     icon: string;
@@ -14,7 +14,7 @@ interface ServiceRowProps {
     buttonHoverColor?: string;
 }
 
-const ServiceRow: React.FC<ServiceRowProps> = ({
+const ServiceRow: React.FC<ServiceRowProps> = memo(({
     icon,
     title,
     description,
@@ -50,14 +50,14 @@ const ServiceRow: React.FC<ServiceRowProps> = ({
                     <span className={`material-symbols-outlined text-3xl ${iconBgColor}`}>{icon}</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">{title}</h2>
-                <p className="text-xl text-[#b99db0] leading-relaxed">{description}</p>
+                <p className="text-base md:text-xl text-[#b99db0] leading-relaxed">{description}</p>
                 <div className={`h-px w-full bg-gradient-to-${reverse ? 'l' : 'r'} from-transparent via-white/10 to-transparent my-2`}></div>
                 <div className="flex items-end justify-between">
                     <div>
                         <p className="text-sm text-white/60 font-medium uppercase tracking-wider mb-1">{priceLabel}</p>
                         <p className="text-3xl font-bold text-white">{price}</p>
                     </div>
-                    <button className={`h-12 px-6 rounded-xl bg-white text-background-dark font-bold ${buttonHoverColor} hover:text-white transition-all duration-300 flex items-center gap-2`}>
+                    <button type="button" className={`min-h-[44px] h-12 px-6 rounded-xl bg-white text-background-dark font-bold text-sm sm:text-base ${buttonHoverColor} hover:text-white transition-all duration-300 flex items-center gap-2 active:scale-[0.98]`}>
                         {reverse ? 'Customize ' + title.split(' ')[1] : 'Start Project'}
                         <span className="material-symbols-outlined text-lg">arrow_forward</span>
                     </button>
@@ -65,6 +65,8 @@ const ServiceRow: React.FC<ServiceRowProps> = ({
             </div>
         </div>
     );
-};
+});
+
+ServiceRow.displayName = 'ServiceRow';
 
 export default ServiceRow;

@@ -17,7 +17,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ imageUrl, category, title, al
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
             <span className="text-primary text-xs font-bold uppercase tracking-wider mb-2">{category}</span>
             <h3 className="text-white text-xl font-bold">{title}</h3>
-            <button className="mt-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-primary transition-colors">
+            <button type="button" className="mt-4 min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-primary transition-colors active:scale-95">
                 <span className="material-symbols-outlined">arrow_outward</span>
             </button>
         </div>
@@ -72,7 +72,7 @@ const PortfolioGallery = () => {
                 ))}
             </div>
             <div className="flex justify-center mt-12">
-                <button className="group flex items-center gap-2 px-8 py-3 rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 text-primary font-bold transition-all hover:scale-105">
+                <button type="button" className="group flex items-center justify-center gap-2 min-h-[44px] px-6 sm:px-8 py-3 rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 text-primary font-bold text-sm sm:text-base transition-all hover:scale-105 active:scale-95">
                     Load More Inspiration
                     <span className="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
                 </button>

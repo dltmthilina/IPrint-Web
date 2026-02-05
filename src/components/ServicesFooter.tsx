@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../iprintlogo.jpeg';
+import logo from '../assets/iprintlogo.jpeg';
 
 const ServicesFooter = () => {
     return (
@@ -21,20 +21,20 @@ const ServicesFooter = () => {
                     <div className="flex gap-12 flex-wrap">
                         <div className="flex flex-col gap-3">
                             <h4 className="text-white font-bold">Company</h4>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">About Us</a>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">Careers</a>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">Blog</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">About Us</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Careers</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Blog</a>
                         </div>
                         <div className="flex flex-col gap-3">
                             <h4 className="text-white font-bold">Support</h4>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">Help Center</a>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">File Guidelines</a>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">Contact</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Help Center</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">File Guidelines</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Contact</a>
                         </div>
                         <div className="flex flex-col gap-3">
                             <h4 className="text-white font-bold">Legal</h4>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">Privacy Policy</a>
-                            <a className="text-[#b99db0] hover:text-primary text-sm" href="#">Terms of Service</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Privacy Policy</a>
+                            <a className="text-[#b99db0] hover:text-primary text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Terms of Service</a>
                         </div>
                     </div>
                 </div>
@@ -43,9 +43,9 @@ const ServicesFooter = () => {
                 <div className="max-w-[1280px] w-full border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-[#b99db0] text-sm">© 2024 iprint Inc. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <a className="text-[#b99db0] hover:text-white transition-colors" href="#"><i className="text-xl">𝕏</i></a>
-                        <a className="text-[#b99db0] hover:text-white transition-colors" href="#">Instagram</a>
-                        <a className="text-[#b99db0] hover:text-white transition-colors" href="#">LinkedIn</a>
+                        <a className="text-[#b99db0] hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center" href="#"><i className="text-xl">𝕏</i></a>
+                        <a className="text-[#b99db0] hover:text-white transition-colors min-h-[44px] flex items-center px-2" href="#">Instagram</a>
+                        <a className="text-[#b99db0] hover:text-white transition-colors min-h-[44px] flex items-center px-2" href="#">LinkedIn</a>
                     </div>
                 </div>
             </div>

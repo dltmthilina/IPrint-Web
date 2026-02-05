@@ -10,9 +10,9 @@ const Footer = () => {
                     {/* Footer Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                         {/* Brand Column */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
                             <Link to="/" className="flex items-center gap-2 mb-2 cursor-pointer group">
-                                <img src={logo} alt="iprint" className="h-8 w-auto rounded shadow-sm" />
+                                <img src={logo} alt="iprint" className="h-8 w-auto rounded shadow-sm" loading="lazy" decoding="async" />
                                 <h2 className="text-white text-xl font-bold tracking-tight group-hover:text-primary transition-colors">
                                     iprint
                                 </h2>
@@ -23,25 +23,25 @@ const Footer = () => {
                         </div>
 
                         {/* Products Column */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
                             <h3 className="text-white font-bold text-lg">Products</h3>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Mugs & Tiles</a>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Crystals</a>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">T-Shirts</a>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Custom Gifts</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Mugs & Tiles</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Crystals</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">T-Shirts</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Custom Gifts</a>
                         </div>
 
                         {/* Support Column */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
                             <h3 className="text-white font-bold text-lg">Support</h3>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Order Tracking</a>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">File Guide</a>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Shipping Info</a>
-                            <a className="text-gray-400 hover:text-primary transition-colors text-sm" href="#">Returns</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Order Tracking</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">File Guide</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Shipping Info</a>
+                            <a className="text-gray-400 hover:text-primary transition-colors text-sm py-2 inline-block min-h-[44px] flex items-center" href="#">Returns</a>
                         </div>
 
                         {/* Contact Column */}
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
                             <h3 className="text-white font-bold text-lg">Contact</h3>
                             <div className="flex items-center gap-3 text-gray-400 text-sm">
                                 <span className="material-symbols-outlined text-primary text-lg">mail</span>

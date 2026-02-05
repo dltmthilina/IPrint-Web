@@ -19,19 +19,19 @@ const PortfolioHero = () => {
 
                 {/* Chips / Filters */}
                 <div className="flex flex-wrap justify-center gap-3">
-                    <button className="flex h-10 items-center justify-center px-6 rounded-full bg-primary text-white text-sm font-bold shadow-md hover:scale-105 transition-transform">
+                    <button type="button" className="flex min-h-[44px] h-10 items-center justify-center px-5 sm:px-6 rounded-full bg-primary text-white text-sm font-bold shadow-md hover:scale-105 active:scale-95 transition-transform">
                         All Projects
                     </button>
-                    <button className="flex h-10 items-center justify-center px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
+                    <button type="button" className="flex min-h-[44px] h-10 items-center justify-center px-5 sm:px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
                         Business Cards
                     </button>
-                    <button className="flex h-10 items-center justify-center px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
+                    <button type="button" className="flex min-h-[44px] h-10 items-center justify-center px-5 sm:px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
                         Large Format
                     </button>
-                    <button className="flex h-10 items-center justify-center px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
+                    <button type="button" className="flex min-h-[44px] h-10 items-center justify-center px-5 sm:px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
                         Gifts
                     </button>
-                    <button className="flex h-10 items-center justify-center px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
+                    <button type="button" className="flex min-h-[44px] h-10 items-center justify-center px-5 sm:px-6 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 hover:border-primary/50 text-slate-700 dark:text-slate-200 text-sm font-medium hover:text-primary transition-colors">
                         Stationery
                     </button>
                 </div>

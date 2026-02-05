@@ -15,11 +15,11 @@ const NavigationArrows: React.FC = () => {
   };
 
   return (
-    <div className="fixed right-8 top-[45%] z-40 flex flex-col gap-6">
+    <div className="fixed right-4 bottom-24 md:right-8 md:bottom-auto md:top-[45%] z-40 flex flex-col gap-6">
       {/* Right Arrow - Infinite Loop */}
       <button
         onClick={goToNext}
-        className="group relative w-16 h-16 cursor-pointer hover:scale-110 transition-all duration-300"
+        className="group relative w-12 h-12 md:w-16 md:h-16 cursor-pointer hover:scale-110 active:scale-95 transition-all duration-300"
       >
         {/* 3D Arrow Container */}
         <div className="relative w-full h-full perspective-1000">
@@ -32,7 +32,7 @@ const NavigationArrows: React.FC = () => {
             {/* Arrow Icon */}
             <div className="absolute inset-0 flex items-center justify-center">
               <svg
-                className="w-8 h-8 text-white"
+                className="w-5 h-5 md:w-8 md:h-8 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

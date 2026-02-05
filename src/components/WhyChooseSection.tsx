@@ -46,11 +46,11 @@ const WhyChooseSection = () => {
                                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse"></div>
 
                                 {/* Card */}
-                                <div className="relative w-full h-full bg-surface-dark-hover rounded-2xl border border-white/10 shadow-2xl p-8 flex flex-col justify-center items-center text-center backdrop-blur-sm z-10">
+                                <div className="relative w-full h-full bg-surface-dark-hover rounded-2xl border border-white/10 shadow-2xl p-4 sm:p-8 flex flex-col justify-center items-center text-center backdrop-blur-sm z-10">
                                     <span className="material-symbols-outlined text-6xl text-white mb-4">deployed_code</span>
                                     <h3 className="text-2xl font-bold text-white mb-2">Ready to Print?</h3>
                                     <p className="text-gray-400 mb-6">Upload your photos and see the magic happen.</p>
-                                    <button className="bg-primary hover:bg-primary/80 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-primary/30 transition-all">
+                                    <button type="button" className="min-h-[48px] bg-primary hover:bg-primary/80 text-white px-6 sm:px-8 py-3 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-primary/30 transition-all active:scale-95">
                                         Start Project
                                     </button>
                                 </div>

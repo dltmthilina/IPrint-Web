@@ -1,12 +1,14 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import "./index.css";
+import { ScrollRevealProvider } from "./contexts/ScrollRevealContext";
 import SplashScreen from "./components/SplashScreen";
 import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 import Header from "./components/Header";
 import NavigationArrows from "./components/NavigationArrows";
 import PageTransition from "./components/PageTransition";
-import Mug3DNavigation from "./components/Pentagon3DNavigation";
+
+// Lazy load heavy 3D nav (Three.js) - only loads on desktop, after app is ready
+const Mug3DNavigation = lazy(() => import("./components/Pentagon3DNavigation"));
 
 // Lazy load pages for optimization
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -16,15 +18,32 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const QuotePage = lazy(() => import("./pages/QuotePage"));
 
+function Mug3DNavigationWrapper() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  if (!mounted || !isDesktop) return null;
+  return (
+    <Suspense fallback={null}>
+      <Mug3DNavigation />
+    </Suspense>
+  );
+}
+
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if splash has already been shown this session
     const hasShownSplash = sessionStorage.getItem("splashShown");
-    if (hasShownSplash) {
-      setLoading(false);
-    }
+    if (hasShownSplash) setLoading(false);
   }, []);
 
   const handleSplashFinish = () => {
@@ -37,10 +56,11 @@ function App() {
       {loading && <SplashScreen onFinish={handleSplashFinish} />}
       {!loading && (
         <Router>
-          <Header />
-          <NavigationArrows />
-          <Mug3DNavigation />
-          <SmoothScrollWrapper>
+          <ScrollRevealProvider>
+            <Header />
+            <NavigationArrows />
+            <Mug3DNavigationWrapper />
+            <SmoothScrollWrapper>
             <PageTransition>
               <Suspense
                 fallback={
@@ -58,8 +78,9 @@ function App() {
                   <Route path="/quote" element={<QuotePage />} />
                 </Routes>
               </Suspense>
-            </PageTransition>
-          </SmoothScrollWrapper>
+              </PageTransition>
+            </SmoothScrollWrapper>
+          </ScrollRevealProvider>
         </Router>
       )}
     </>

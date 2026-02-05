@@ -14,7 +14,7 @@ const AboutPage = () => {
               <span className="inline-block py-1 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-6">
                 Our Story
               </span>
-              <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter">
+              <h1 className="text-3xl sm:text-5xl md:text-8xl font-black mb-6 sm:mb-8 tracking-tighter">
                 Defining the{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-tertiary">
                   Future
@@ -125,12 +125,12 @@ const AboutPage = () => {
 
           {/* CTA */}
           <section className="py-24 px-6 lg:px-12">
-            <div className="max-w-5xl mx-auto rounded-[3rem] bg-gradient-to-br from-primary/20 via-surface-dark to-secondary/10 p-12 md:p-20 text-center border border-white/10 relative overflow-hidden">
+            <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-[3rem] bg-gradient-to-br from-primary/20 via-surface-dark to-secondary/10 p-6 sm:p-12 md:p-20 text-center border border-white/10 relative overflow-hidden">
               <div className="relative z-10">
-                <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8">
                   Ready to start your first project?
                 </h2>
-                <button className="bg-white text-black px-12 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                <button type="button" className="min-h-[48px] px-6 sm:px-12 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl hover:scale-105 active:scale-95 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.2)]">
                   Get a Free Quote
                 </button>
               </div>

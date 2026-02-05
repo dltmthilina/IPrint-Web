@@ -24,6 +24,7 @@ const Header = () => {
                 src={logo}
                 alt="iprint"
                 className="h-10 w-auto rounded-lg shadow-lg"
+                decoding="async"
               />
               <h2 className="text-white text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
                 iprint
@@ -51,12 +52,12 @@ const Header = () => {
               </nav>
             </div>
 
-            {/* Mobile Menu Icon */}
-            <div className="md:hidden text-white cursor-pointer z-50" onClick={toggleMenu}>
+            {/* Mobile Menu Icon - min 44px touch target */}
+            <button type="button" className="md:hidden flex items-center justify-center min-w-[44px] min-h-[44px] -mr-2 text-white cursor-pointer z-50 rounded-lg hover:bg-white/10 active:scale-95 transition-transform" onClick={toggleMenu} aria-label="Toggle menu">
               <span className="material-symbols-outlined text-3xl">
                 {isMenuOpen ? 'close' : 'menu'}
               </span>
-            </div>
+            </button>
 
             {/* Mobile Navigation Content */}
             {isMenuOpen && (
@@ -67,9 +68,9 @@ const Header = () => {
                     return (
                       <Link
                         key={item}
-                        className={`${isActive(path)
-                            ? "text-primary font-bold text-2xl shadow-[0_0_20px_rgba(238,43,173,0.4)]"
-                            : "text-gray-300 text-xl"
+                        className={`min-h-[48px] flex items-center justify-center px-6 ${isActive(path)
+                            ? "text-primary font-bold text-xl sm:text-2xl shadow-[0_0_20px_rgba(238,43,173,0.4)]"
+                            : "text-gray-300 text-lg sm:text-xl"
                           } hover:text-white transition-all font-medium leading-normal`}
                         to={path}
                         onClick={closeMenu}

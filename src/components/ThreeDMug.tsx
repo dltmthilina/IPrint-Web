@@ -87,8 +87,14 @@ const ThreeDMug = () => {
     }, []);
 
     return (
-        <div className="w-full h-[400px] md:h-[500px] relative z-10">
-            <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        <div className="w-full h-full min-h-0 relative z-10">
+            <Canvas
+                camera={{ position: [0, 0, 5], fov: 45 }}
+                gl={{ alpha: true, antialias: true }}
+                onCreated={({ scene }) => {
+                    scene.background = null;
+                }}
+            >
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[5, 5, 5]} intensity={1} />
                 <pointLight position={[-5, -5, -5]} color="#ff00ff" intensity={0.5} />

@@ -68,12 +68,13 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-4 pt-4">
+                <div className="flex flex-wrap gap-3 sm:gap-4 pt-4">
                   {["Facebook", "Instagram", "Twitter", "LinkedIn"].map(
                     (social) => (
                       <button
                         key={social}
-                        className="px-4 py-2 rounded-lg bg-surface-dark border border-white/5 hover:border-primary/50 text-xs font-bold transition-all"
+                        type="button"
+                        className="min-h-[44px] px-4 py-3 rounded-lg bg-surface-dark border border-white/5 hover:border-primary/50 text-xs sm:text-sm font-bold transition-all active:scale-95"
                       >
                         {social}
                       </button>
@@ -83,7 +84,7 @@ const ContactPage = () => {
               </div>
 
               {/* Contact Form */}
-              <div className="w-full p-8 md:p-12 rounded-[2.5rem] bg-surface-dark/40 backdrop-blur-xl border border-white/10 shadow-2xl relative">
+              <div className="w-full p-4 sm:p-8 md:p-12 rounded-2xl sm:rounded-[2.5rem] bg-surface-dark/40 backdrop-blur-xl border border-white/10 shadow-2xl relative">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
                 <form className="flex flex-col gap-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -131,7 +132,7 @@ const ContactPage = () => {
                     ></textarea>
                   </div>
 
-                  <button className="w-full h-16 rounded-2xl bg-gradient-to-r from-primary to-purple-600 font-black text-lg hover:shadow-[0_0_30px_rgba(238,43,173,0.4)] transition-all">
+                  <button type="button" className="w-full min-h-[48px] h-14 sm:h-16 rounded-2xl bg-gradient-to-r from-primary to-purple-600 font-black text-base sm:text-lg hover:shadow-[0_0_30px_rgba(238,43,173,0.4)] transition-all active:scale-[0.99]">
                     Send Message
                   </button>
                 </form>

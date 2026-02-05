@@ -160,7 +160,11 @@ const Mug3DNavigation: React.FC = () => {
   const [targetPage, setTargetPage] = useState(pages.indexOf(location.pathname));
   
   // Dragging state
-  const [position, setPosition] = useState({ x: window.innerWidth / 2 - 128, y: window.innerHeight / 2 - 128 });
+  const [position, setPosition] = useState(() =>
+    typeof window !== 'undefined'
+      ? { x: window.innerWidth / 2 - 128, y: window.innerHeight / 2 - 128 }
+      : { x: 0, y: 0 }
+  );
   const [isDragging, setIsDragging] = useState(false);
   const [isMoving, setIsMoving] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -232,7 +236,7 @@ const Mug3DNavigation: React.FC = () => {
 
   return (
     <div 
-      className="fixed w-64 h-64 transition-shadow hover:shadow-2xl" 
+      className="fixed w-64 h-64 transition-shadow hover:shadow-2xl hidden md:block" 
       style={{ 
         zIndex: 1, 
         left: `${position.x}px`, 

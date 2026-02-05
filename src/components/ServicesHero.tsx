@@ -12,7 +12,7 @@ const ServicesHero = () => {
                     <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold tracking-wide uppercase">
                         World Class Printing
                     </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-[-0.04em]">
+                    <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-[-0.04em]">
                         Print Anything.<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Beautifully.</span>
                     </h1>
@@ -20,11 +20,11 @@ const ServicesHero = () => {
                         From business cards to custom gifts, we bring your digital designs to life with premium quality materials, vibrant colors, and precision.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                        <button className="h-14 px-8 rounded-2xl bg-primary text-white font-bold text-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform shadow-[0_4px_20px_rgba(238,43,173,0.4)]">
+                        <button type="button" className="min-h-[48px] h-14 px-6 sm:px-8 rounded-2xl bg-primary text-white font-bold text-base sm:text-lg flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-transform shadow-[0_4px_20px_rgba(238,43,173,0.4)]">
                             <span>Explore Services</span>
                             <span className="material-symbols-outlined">arrow_downward</span>
                         </button>
-                        <button className="h-14 px-8 rounded-2xl bg-[#392833] text-white font-bold text-lg border border-white/5 hover:bg-[#4a3542] transition-colors">
+                        <button type="button" className="min-h-[48px] h-14 px-6 sm:px-8 rounded-2xl bg-[#392833] text-white font-bold text-base sm:text-lg border border-white/5 hover:bg-[#4a3542] transition-colors active:scale-95">
                             Quick Quote
                         </button>
                     </div>

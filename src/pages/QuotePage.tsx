@@ -40,7 +40,7 @@ const QuotePage = () => {
                 {[1, 2, 3].map((s) => (
                   <div key={s} className="flex items-center gap-3">
                     <div
-                      className={`size-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${step >= s ? "bg-primary text-white" : "bg-surface-dark text-gray-600 border border-white/5"}`}
+                      className={`size-11 sm:size-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${step >= s ? "bg-primary text-white" : "bg-surface-dark text-gray-600 border border-white/5"}`}
                     >
                       {s}
                     </div>
@@ -54,7 +54,7 @@ const QuotePage = () => {
               </div>
             </div>
 
-            <div className="bg-surface-dark/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl min-h-[500px] flex flex-col">
+            <div className="bg-surface-dark/40 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-[2.5rem] p-4 sm:p-8 md:p-12 shadow-2xl min-h-[400px] sm:min-h-[500px] flex flex-col">
               {step === 1 && (
                 <div className="flex flex-col animate-in fade-in duration-500">
                   <h2 className="text-2xl font-bold mb-8">
@@ -65,7 +65,7 @@ const QuotePage = () => {
                       <button
                         key={type.id}
                         onClick={() => setSelectedType(type.id)}
-                        className={`p-6 rounded-2xl flex flex-col items-center gap-3 border transition-all duration-300 ${selectedType === type.id ? "bg-primary/20 border-primary shadow-[0_0_20px_rgba(238,43,173,0.3)]" : "bg-background-dark/50 border-white/5 hover:border-white/20"}`}
+                        className={`min-h-[88px] sm:min-h-0 p-4 sm:p-6 rounded-2xl flex flex-col items-center justify-center gap-2 sm:gap-3 border transition-all duration-300 active:scale-[0.98] ${selectedType === type.id ? "bg-primary/20 border-primary shadow-[0_0_20px_rgba(238,43,173,0.3)]" : "bg-background-dark/50 border-white/5 hover:border-white/20"}`}
                       >
                         <span className="material-symbols-outlined text-4xl text-primary">
                           {type.icon}
@@ -80,7 +80,7 @@ const QuotePage = () => {
                   <button
                     disabled={!selectedType}
                     onClick={() => setStep(2)}
-                    className="mt-12 w-full h-16 rounded-2xl bg-white text-black font-black text-lg disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary hover:text-white transition-all"
+                    className="mt-12 w-full min-h-[48px] h-14 sm:h-16 rounded-2xl bg-white text-black font-black text-base sm:text-lg disabled:opacity-30 disabled:cursor-not-allowed hover:bg-primary hover:text-white transition-all active:scale-[0.99]"
                   >
                     Continue to Customization
                   </button>
@@ -105,7 +105,7 @@ const QuotePage = () => {
                           Drag and drop files or{" "}
                           <span className="text-primary font-bold">browse</span>
                         </p>
-                        <p className="text-[10px] text-gray-600">
+                        <p className="text-xs text-gray-600">
                           Supports JPG, PNG, AI, PSD (Max 50MB)
                         </p>
                       </div>
@@ -123,13 +123,13 @@ const QuotePage = () => {
                   <div className="grid grid-cols-2 gap-4 mt-12">
                     <button
                       onClick={() => setStep(1)}
-                      className="h-16 rounded-2xl border border-white/10 font-bold hover:bg-white/5 transition-all"
+                      className="min-h-[48px] h-14 sm:h-16 rounded-2xl border border-white/10 font-bold hover:bg-white/5 transition-all active:scale-[0.99]"
                     >
                       Go Back
                     </button>
                     <button
                       onClick={() => setStep(3)}
-                      className="h-16 rounded-2xl bg-primary font-black text-lg hover:shadow-[0_0_30px_rgba(238,43,173,0.4)] transition-all"
+                      className="min-h-[48px] h-14 sm:h-16 rounded-2xl bg-primary font-black text-base sm:text-lg hover:shadow-[0_0_30px_rgba(238,43,173,0.4)] transition-all active:scale-[0.99]"
                     >
                       Final Step
                     </button>
@@ -176,13 +176,13 @@ const QuotePage = () => {
                   </div>
                   <button
                     onClick={() => alert("Quote Request Sent!")}
-                    className="mt-12 h-16 rounded-2xl bg-gradient-to-r from-secondary to-tertiary font-black text-lg hover:shadow-[0_0_30px_rgba(238,43,173,0.4)] transition-all text-black"
+                    className="mt-12 min-h-[48px] h-14 sm:h-16 rounded-2xl bg-gradient-to-r from-secondary to-tertiary font-black text-base sm:text-lg hover:shadow-[0_0_30px_rgba(238,43,173,0.4)] transition-all text-black active:scale-[0.99]"
                   >
                     Submit Quote Request
                   </button>
                   <button
                     onClick={() => setStep(2)}
-                    className="mt-4 text-gray-500 font-bold hover:text-white transition-colors"
+                    className="mt-4 min-h-[44px] py-2 text-gray-500 font-bold hover:text-white transition-colors"
                   >
                     Wait, I missed something
                   </button>

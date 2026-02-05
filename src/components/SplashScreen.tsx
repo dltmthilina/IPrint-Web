@@ -11,14 +11,14 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setExit(true);
-            setTimeout(onFinish, 800); // Allow time for exit animation
-        }, 2500);
+            setTimeout(onFinish, 400); // Shorter exit for snappier feel
+        }, 1200); // Reduced from 2.5s so app becomes usable faster
 
         return () => clearTimeout(timer);
     }, [onFinish]);
 
     return (
-        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-background-dark transition-all duration-1000 ease-in-out ${exit ? 'opacity-0 scale-110 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`fixed inset-0 z-[100] flex items-center justify-center bg-background-dark transition-all duration-500 ease-in-out ${exit ? 'opacity-0 scale-110 pointer-events-none' : 'opacity-100'}`}>
             {/* Animated Background Blobs */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] animate-pulse delay-700"></div>
@@ -32,6 +32,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
                             src={logo}
                             alt="iprint Logo"
                             className="w-full h-auto rounded-xl transform transition-transform duration-700 hover:scale-110"
+                            fetchPriority="high"
+                            decoding="async"
                         />
                     </div>
                 </div>

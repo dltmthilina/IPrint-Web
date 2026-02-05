@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
-import ThreeDMug from './ThreeDMug';
+import { useScrollReveal } from '../contexts/ScrollRevealContext';
+
+// Lazy load 3D mug (Three.js) so hero paints fast; loads after fold is visible
+const ThreeDMug = lazy(() => import('./ThreeDMug'));
+
+const ThreeDMugPlaceholder = () => (
+  <div className="w-full h-full min-h-[160px] md:min-h-[256px] flex items-center justify-center rounded-2xl bg-surface-dark/50 border border-white/10 animate-pulse" aria-hidden="true">
+    <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary/20 border-2 border-primary/40" />
+  </div>
+);
 
 const HeroSection = () => {
+    const { hasScrolled } = useScrollReveal();
+
     return (
-        <div className="relative w-full bg-background-dark overflow-hidden min-h-[800px] flex items-center">
+        <div className="relative w-full bg-background-dark overflow-hidden min-h-[100svh] sm:min-h-[700px] lg:min-h-[800px] flex items-center">
             {/* Background Gradient Blobs */}
             <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#00ffff] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
             <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-[#ff00ff] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
@@ -81,8 +92,14 @@ const HeroSection = () => {
                                 </div>
                             </div>
 
-                            {/* Right Content - 3D Floating Images */}
-                            <div className="lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[400px] md:h-[500px] w-full perspective-[1000px]">
+                            {/* Right Content - 3D Floating Images: visible only after user starts scrolling */}
+                            <div
+                                className={`lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[400px] md:h-[500px] w-full perspective-[1000px] transition-all duration-700 ease-out ${
+                                    hasScrolled
+                                        ? 'opacity-100 translate-x-0 translate-y-0'
+                                        : 'opacity-0 translate-x-8 translate-y-4 pointer-events-none'
+                                }`}
+                            >
                                 {/* Main Card */}
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 md:w-64 md:h-80 z-20 animate-float hover:z-50 transition-all duration-500">
                                     <div
@@ -98,9 +115,11 @@ const HeroSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Custom Mugs - 3D Render */}
-                                <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 z-40 transform -translate-x-4 md:translate-x-0 pointer-events-none">
-                                    <ThreeDMug />
+                                {/* Custom Mugs - 3D Render: constrained + overflow hidden so it never covers content */}
+                                <div className="absolute top-0 left-0 w-40 h-40 md:w-64 md:h-64 z-40 transform -translate-x-4 md:translate-x-0 pointer-events-none overflow-hidden">
+                                    <Suspense fallback={<ThreeDMugPlaceholder />}>
+                                        <ThreeDMug />
+                                    </Suspense>
                                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-surface-dark px-4 py-1 rounded-full border border-primary/30 text-xs font-bold text-primary shadow-lg whitespace-nowrap z-50">
                                         Custom Mugs
                                     </div>
