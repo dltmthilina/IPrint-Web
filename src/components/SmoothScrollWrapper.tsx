@@ -14,6 +14,7 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
   const targetPosRef = useRef(0);
   const rafIdRef = useRef<number | null>(null);
   const hasNotifiedRef = useRef(false);
+  const touchStartYRef = useRef(0);
   const { setHasScrolled } = useScrollReveal();
   const location = useLocation();
 
@@ -32,7 +33,7 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
 
     const smoothScroll = () => {
       const diff = targetPosRef.current - scrollPosRef.current;
-      const delta = diff * 0.03; // Ultra smooth easing factor for floating feel
+      const delta = diff * 0.08; // Smooth easing factor (increased from 0.03 for better mobile feel)
 
       if (Math.abs(diff) > 0.1) {
         scrollPosRef.current += delta;
@@ -41,31 +42,57 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
       } else {
         scrollPosRef.current = targetPosRef.current;
         element.style.transform = `translate3d(0, ${-scrollPosRef.current}px, 0)`;
-        rafIdRef.current = null; // Clear RAF ID so new scroll can start
+        rafIdRef.current = null;
       }
     };
 
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
+    const notifyScrolled = () => {
       if (!hasNotifiedRef.current) {
         hasNotifiedRef.current = true;
         setHasScrolled();
       }
+    };
+
+    const applyDelta = (deltaY: number) => {
       const maxScroll = element.scrollHeight - window.innerHeight;
       targetPosRef.current = Math.max(
         0,
-        Math.min(maxScroll, targetPosRef.current + e.deltaY * 0.5),
+        Math.min(maxScroll, targetPosRef.current + deltaY),
       );
-
       if (!rafIdRef.current) {
         rafIdRef.current = requestAnimationFrame(smoothScroll);
       }
     };
 
+    // --- Desktop wheel handler ---
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      notifyScrolled();
+      applyDelta(e.deltaY * 0.5);
+    };
+
+    // --- Mobile touch handlers ---
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartYRef.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+      notifyScrolled();
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartYRef.current - currentY;
+      touchStartYRef.current = currentY;
+      applyDelta(deltaY);
+    };
+
     window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
       if (rafIdRef.current) {
         cancelAnimationFrame(rafIdRef.current);
       }
@@ -88,3 +115,4 @@ const SmoothScrollWrapper: React.FC<SmoothScrollWrapperProps> = ({
 };
 
 export default SmoothScrollWrapper;
+
