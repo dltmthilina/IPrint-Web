@@ -15,26 +15,26 @@ const HeroSection = () => {
     const { hasScrolled } = useScrollReveal();
 
     return (
-        <div className="relative w-full bg-background-dark overflow-hidden min-h-[100svh] sm:min-h-[700px] lg:min-h-[800px] flex items-center">
+        <div className="relative w-full bg-background-dark overflow-hidden min-h-[100svh] sm:min-h-[700px] lg:min-h-[800px] flex items-center pt-20 sm:pt-0">
             {/* Background Gradient Blobs */}
             <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#00ffff] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
             <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-[#ff00ff] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
             <div className="absolute bottom-[-10%] left-[30%] w-[700px] h-[700px] bg-[#ffff00] rounded-full mix-blend-screen filter blur-[180px] opacity-10 pointer-events-none"></div>
 
             <div className="layout-container flex justify-center w-full relative z-10">
-                <div className="layout-content-container flex flex-col max-w-[1280px] w-full px-4 md:px-10 py-12">
+                <div className="layout-content-container flex flex-col max-w-[1280px] w-full px-5 sm:px-6 md:px-10 py-6 sm:py-12">
                     <div className="@container">
-                        <div className="flex flex-col gap-12 lg:flex-row items-center">
+                        <div className="flex flex-col gap-8 sm:gap-12 lg:flex-row items-center">
                             {/* Left Content */}
-                            <div className="flex flex-col gap-8 lg:w-1/2 text-left z-20">
+                            <div className="flex flex-col gap-5 sm:gap-8 lg:w-1/2 text-left z-20">
                                 {/* Badge */}
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-dark/50 backdrop-blur-md border border-primary/30 w-fit shadow-[0_0_15px_rgba(238,43,173,0.2)]">
-                                    <span className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#00ffff] animate-pulse"></span>
-                                    <span className="text-xs font-bold text-white uppercase tracking-widest">Premium 3D Printing Service</span>
+                                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-surface-dark/50 backdrop-blur-md border border-primary/30 w-fit shadow-[0_0_15px_rgba(238,43,173,0.2)]">
+                                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-secondary shadow-[0_0_10px_#00ffff] animate-pulse"></span>
+                                    <span className="text-[10px] sm:text-xs font-bold text-white uppercase tracking-widest">Premium 3D Printing Service</span>
                                 </div>
 
                                 {/* Headline */}
-                                <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-[-0.033em]">
+                                <h1 className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-[-0.033em]">
                                     Print Beyond <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ffff] via-[#ff00ff] to-[#ffff00] drop-shadow-[0_0_30px_rgba(238,43,173,0.4)]">
                                         Dimensions
@@ -42,38 +42,38 @@ const HeroSection = () => {
                                 </h1>
 
                                 {/* Description */}
-                                <p className="text-gray-300 text-lg md:text-xl font-light leading-relaxed max-w-[550px]">
+                                <p className="text-gray-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-[550px]">
                                     Hyper-realistic custom prints. From mugs to crystals, we turn your digital memories into tangible, high-quality 3D masterpieces.
                                 </p>
 
                                 {/* CTA Buttons */}
-                                <div className="flex flex-col sm:flex-row gap-5 mt-2">
-                                    <Link to="/quote" className="btn-3d flex items-center justify-center rounded-full h-14 px-10 bg-white text-background-dark hover:bg-gray-100 text-lg font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95">
+                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-2">
+                                    <Link to="/quote" className="btn-3d flex items-center justify-center rounded-full h-12 sm:h-14 px-8 sm:px-10 bg-white text-background-dark hover:bg-gray-100 text-base sm:text-lg font-bold shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95">
                                         Create Now
                                     </Link>
-                                    <Link to="/services" className="flex items-center justify-center rounded-full h-14 px-10 bg-transparent border border-gray-600 hover:border-white hover:bg-white/5 transition-all text-white text-lg font-medium gap-2 backdrop-blur-sm">
-                                        <span className="material-symbols-outlined">square</span>
+                                    <Link to="/services" className="flex items-center justify-center rounded-full h-12 sm:h-14 px-8 sm:px-10 bg-transparent border border-gray-600 hover:border-white hover:bg-white/5 transition-all text-white text-base sm:text-lg font-medium gap-2 backdrop-blur-sm">
+                                        <span className="material-symbols-outlined text-[20px] sm:text-[24px]">square</span>
                                         View 3D Samples
                                     </Link>
                                 </div>
 
                                 {/* Social Proof */}
-                                <div className="flex items-center gap-6 mt-6 pt-6 border-t border-white/10">
-                                    <div className="flex -space-x-4">
+                                <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/10">
+                                    <div className="flex -space-x-3 sm:-space-x-4">
                                         <div
-                                            className="w-12 h-12 rounded-full border-2 border-background-dark bg-gray-700 bg-cover bg-center shadow-lg"
+                                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-background-dark bg-gray-700 bg-cover bg-center shadow-lg"
                                             style={{
                                                 backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtlZlrVVWdrwlmbnde7dKP3Bm3x-23PBZPg4CYoVMC9HeqhiLRcPFYa6B1FfxFEODjdgzZy20U3tNBEVLbr2YaWBvWaGm6bT_c77NMVrze4TgQJvl0CzWCe-gf1-xpwdJ5acyTLE5WuSkxVXpH0UJSwYfiKuydWejsN3QU3lHBc-Hq1YG_J_7eGwd6O9odE6FlXdeCzlj8ADmudOB1Ue7gJz_-26NZuOTD8lKoLkkTq5YHg8gbHjM0yj836TDHMsxgAHrBVrDAnF1L")'
                                             }}
                                         ></div>
                                         <div
-                                            className="w-12 h-12 rounded-full border-2 border-background-dark bg-gray-700 bg-cover bg-center shadow-lg"
+                                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-background-dark bg-gray-700 bg-cover bg-center shadow-lg"
                                             style={{
                                                 backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA17AoNjo07uZ8tJ5dkh-zz1rv6pkgycNy5cX46kFq8mgvJ9s-CtuleCPVw6jnniFfm1AuFZtKf2xgqoc4o4T0ZQc6QPTVLcqsjEGEOJNzH_qHnvexSTrpEmEU4_7bwhizERwSTTLvQdWleOXuysDqN0iu7rBiZJWbEbtU2Mv2vmEEwF0r7tKw_4ZJg3DvHemTln4yUHdp0cxCkBLdst50m98AG38s5ggX3FCgd_LaRmqvMxWX_Rwe-dJPzh2H1SE5WI-TacYYsG19A")'
                                             }}
                                         ></div>
                                         <div
-                                            className="w-12 h-12 rounded-full border-2 border-background-dark bg-gray-700 bg-cover bg-center shadow-lg"
+                                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-background-dark bg-gray-700 bg-cover bg-center shadow-lg"
                                             style={{
                                                 backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA32i-bD4XXfA5ED-WvbFBkkuiw3uWJLZOqzreTHuDsTAJ2y8xVM9hVrJfO4m8rqjyfOM4mSgjDr1tm2aC7DIDAxOH3OfeWQEPWSYPXvI1BGpZWj2hHb2d2q9GQ11oRypCpnG3mO2nYtjK4-ZRFd_qRRjnGHeiai2jzSYlDuqDAtERowXCHN4BN8AQ1I_hpo9owsXzFJcuSqK4hcWmetuzYmP6ujsm_s2UYnMpAJbjCiZIwmk5ow5Wp2-mSkz0PErq27ifcAEEgai4t")'
                                             }}
@@ -81,20 +81,20 @@ const HeroSection = () => {
                                     </div>
                                     <div className="flex flex-col">
                                         <div className="flex text-tertiary text-sm drop-shadow-[0_0_5px_rgba(255,255,0,0.5)]">
-                                            <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                                            <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                                            <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                                            <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                                            <span className="material-symbols-outlined text-[18px] fill-current">star</span>
+                                            <span className="material-symbols-outlined text-[16px] sm:text-[18px] fill-current">star</span>
+                                            <span className="material-symbols-outlined text-[16px] sm:text-[18px] fill-current">star</span>
+                                            <span className="material-symbols-outlined text-[16px] sm:text-[18px] fill-current">star</span>
+                                            <span className="material-symbols-outlined text-[16px] sm:text-[18px] fill-current">star</span>
+                                            <span className="material-symbols-outlined text-[16px] sm:text-[18px] fill-current">star</span>
                                         </div>
-                                        <span className="text-sm text-gray-400 font-medium">Top Rated 3D Print Shop</span>
+                                        <span className="text-xs sm:text-sm text-gray-400 font-medium">Top Rated 3D Print Shop</span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Right Content - 3D Floating Images: visible only after user starts scrolling */}
                             <div
-                                className={`lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[400px] md:h-[500px] w-full perspective-[1000px] transition-all duration-700 ease-out ${hasScrolled
+                                className={`lg:w-1/2 relative flex justify-center lg:justify-end mt-8 sm:mt-16 lg:mt-0 h-[280px] sm:h-[400px] md:h-[500px] w-full perspective-[1000px] transition-all duration-700 ease-out ${hasScrolled
                                     ? 'opacity-100 translate-x-0 translate-y-0'
                                     : 'opacity-0 translate-x-8 translate-y-4 pointer-events-none'
                                     }`}

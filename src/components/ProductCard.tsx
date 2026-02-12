@@ -51,7 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
     };
 
     return (
-        <div className={`group relative bg-surface-dark rounded-3xl overflow-hidden border border-white/5 transition-all duration-500 hover:-translate-y-2 ${hoverColorClasses[hoverColor]}`}>
+        <div className={`group relative bg-surface-dark rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 transition-all duration-500 hover:-translate-y-2 ${hoverColorClasses[hoverColor]}`}>
             <div
                 className="aspect-[4/5] w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                 style={{ backgroundImage: `url("${imageUrl}")` }}
@@ -59,12 +59,12 @@ const ProductCard: React.FC<ProductCardProps> = memo(({
                 aria-hidden="true"
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
-            <div className="absolute bottom-0 left-0 p-6 w-full">
-                <h3 className={`text-white text-xl font-bold mb-1 transition-colors ${textHoverClasses[hoverColor]}`}>
+            <div className="absolute bottom-0 left-0 p-3 sm:p-6 w-full">
+                <h3 className={`text-white text-sm sm:text-xl font-bold mb-0.5 sm:mb-1 transition-colors leading-tight ${textHoverClasses[hoverColor]}`}>
                     {title}
                 </h3>
-                <p className="text-gray-400 text-xs mb-4 line-clamp-2">{description}</p>
-                <button type="button" className={`w-full min-h-[44px] py-3 sm:py-2 rounded-lg bg-white/10 text-white text-sm font-bold transition-colors backdrop-blur-sm active:scale-[0.98] ${buttonHoverClasses[hoverColor]}`}>
+                <p className="text-gray-400 text-[10px] sm:text-xs mb-2 sm:mb-4 line-clamp-2">{description}</p>
+                <button type="button" className={`w-full min-h-[36px] sm:min-h-[44px] py-2 sm:py-3 rounded-lg bg-white/10 text-white text-xs sm:text-sm font-bold transition-colors backdrop-blur-sm active:scale-[0.98] ${buttonHoverClasses[hoverColor]}`}>
                     Customize
                 </button>
             </div>

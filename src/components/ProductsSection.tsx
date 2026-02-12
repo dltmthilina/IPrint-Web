@@ -64,47 +64,47 @@ const products: Product[] = [
 ];
 
 const ProductsSection = () => {
-    return (
-        <div className="w-full bg-[#130d11] py-20 relative" id="services">
-            {/* Top Border Gradient */}
-            <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+  return (
+    <div className="w-full bg-[#130d11] py-12 sm:py-20 relative" id="services">
+      {/* Top Border Gradient */}
+      <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
 
-            {/* Grid Pattern Background */}
-            <div
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                    backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
-                    backgroundSize: '40px 40px'
-                }}
-            ></div>
+      {/* Grid Pattern Background */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
+        }}
+      ></div>
 
-            <div className="layout-container flex justify-center w-full relative z-10">
-                <div className="layout-content-container flex flex-col max-w-[1280px] w-full px-4 md:px-10">
-                    {/* Section Header */}
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-secondary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Catalog</span>
-                        <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                            Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">3D Products</span>
-                        </h2>
-                        <p className="text-gray-400">Select a category to customize your high-quality prints.</p>
-                    </div>
+      <div className="layout-container flex justify-center w-full relative z-10">
+        <div className="layout-content-container flex flex-col max-w-[1280px] w-full px-5 sm:px-6 md:px-10">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-[10px] sm:text-xs mb-3 sm:mb-4 block">Our Catalog</span>
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+              Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">3D Products</span>
+            </h2>
+            <p className="text-gray-400 text-sm sm:text-base">Select a category to customize your high-quality prints.</p>
+          </div>
 
-                    {/* Products Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {products.map((product, index) => (
-                            <ProductCard
-                                key={index}
-                                imageUrl={product.imageUrl}
-                                title={product.title}
-                                description={product.description}
-                                hoverColor={product.hoverColor}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+          {/* Products Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            {products.map((product, index) => (
+              <ProductCard
+                key={index}
+                imageUrl={product.imageUrl}
+                title={product.title}
+                description={product.description}
+                hoverColor={product.hoverColor}
+              />
+            ))}
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ProductsSection;
