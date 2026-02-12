@@ -6,9 +6,9 @@ import { useScrollReveal } from '../contexts/ScrollRevealContext';
 const ThreeDMug = lazy(() => import('./ThreeDMug'));
 
 const ThreeDMugPlaceholder = () => (
-  <div className="w-full h-full min-h-[160px] md:min-h-[256px] flex items-center justify-center rounded-2xl bg-surface-dark/50 border border-white/10 animate-pulse" aria-hidden="true">
-    <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary/20 border-2 border-primary/40" />
-  </div>
+    <div className="w-full h-full min-h-[160px] md:min-h-[256px] flex items-center justify-center rounded-2xl bg-surface-dark/50 border border-white/10 animate-pulse" aria-hidden="true">
+        <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-primary/20 border-2 border-primary/40" />
+    </div>
 );
 
 const HeroSection = () => {
@@ -94,11 +94,10 @@ const HeroSection = () => {
 
                             {/* Right Content - 3D Floating Images: visible only after user starts scrolling */}
                             <div
-                                className={`lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[400px] md:h-[500px] w-full perspective-[1000px] transition-all duration-700 ease-out ${
-                                    hasScrolled
-                                        ? 'opacity-100 translate-x-0 translate-y-0'
-                                        : 'opacity-0 translate-x-8 translate-y-4 pointer-events-none'
-                                }`}
+                                className={`lg:w-1/2 relative flex justify-center lg:justify-end mt-16 lg:mt-0 h-[400px] md:h-[500px] w-full perspective-[1000px] transition-all duration-700 ease-out ${hasScrolled
+                                    ? 'opacity-100 translate-x-0 translate-y-0'
+                                    : 'opacity-0 translate-x-8 translate-y-4 pointer-events-none'
+                                    }`}
                             >
                                 {/* Main Card */}
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-64 md:w-64 md:h-80 z-20 animate-float hover:z-50 transition-all duration-500">
