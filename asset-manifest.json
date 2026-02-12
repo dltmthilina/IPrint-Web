@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/IPrint-Web/static/css/main.ab0faa47.css",
-    "main.js": "/IPrint-Web/static/js/main.41fe89aa.js",
-    "static/js/855.ef4178b5.chunk.js": "/IPrint-Web/static/js/855.ef4178b5.chunk.js",
+    "main.css": "/IPrint-Web/static/css/main.8c401c38.css",
+    "main.js": "/IPrint-Web/static/js/main.abbf94ed.js",
+    "static/js/855.ac62faf5.chunk.js": "/IPrint-Web/static/js/855.ac62faf5.chunk.js",
     "static/js/426.131ed314.chunk.js": "/IPrint-Web/static/js/426.131ed314.chunk.js",
     "static/js/527.aa9df965.chunk.js": "/IPrint-Web/static/js/527.aa9df965.chunk.js",
     "static/js/301.c43a81d9.chunk.js": "/IPrint-Web/static/js/301.c43a81d9.chunk.js",
@@ -13,9 +13,9 @@
     "static/js/37.1a3679c4.chunk.js": "/IPrint-Web/static/js/37.1a3679c4.chunk.js",
     "static/media/iprintlogo.jpeg": "/IPrint-Web/static/media/iprintlogo.d3bc5aa8f09d87b01968.jpeg",
     "index.html": "/IPrint-Web/index.html",
-    "main.ab0faa47.css.map": "/IPrint-Web/static/css/main.ab0faa47.css.map",
-    "main.41fe89aa.js.map": "/IPrint-Web/static/js/main.41fe89aa.js.map",
-    "855.ef4178b5.chunk.js.map": "/IPrint-Web/static/js/855.ef4178b5.chunk.js.map",
+    "main.8c401c38.css.map": "/IPrint-Web/static/css/main.8c401c38.css.map",
+    "main.abbf94ed.js.map": "/IPrint-Web/static/js/main.abbf94ed.js.map",
+    "855.ac62faf5.chunk.js.map": "/IPrint-Web/static/js/855.ac62faf5.chunk.js.map",
     "426.131ed314.chunk.js.map": "/IPrint-Web/static/js/426.131ed314.chunk.js.map",
     "527.aa9df965.chunk.js.map": "/IPrint-Web/static/js/527.aa9df965.chunk.js.map",
     "301.c43a81d9.chunk.js.map": "/IPrint-Web/static/js/301.c43a81d9.chunk.js.map",
@@ -26,7 +26,7 @@
     "37.1a3679c4.chunk.js.map": "/IPrint-Web/static/js/37.1a3679c4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab0faa47.css",
-    "static/js/main.41fe89aa.js"
+    "static/css/main.8c401c38.css",
+    "static/js/main.abbf94ed.js"
   ]
 }
